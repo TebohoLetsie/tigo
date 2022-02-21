@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Results</title>
+  </head>
+  <body>
+    <%  Course.forEach(function(course){%>
+        <%  if(course.school.name=="NWU"){%>
+          <a href="#"><div class="card nwu-div" style="width:18rem">
+              <p class="card-title"><%=course.code%><span>  </span><%=course.name%></p>
+              <span class="card-text">aps : <%=course.school.aps%></span><br>
+              <span class="card-text"><%=course.school.name%></span>
+              <button type="button" name="button">save</button>
+            </div></a>
+          <%}%>
+          <%if(course.school.name=="UP"){%>
+          <a href="#"><div class="card up-div" style="width:18rem">
+              <p class="card-text"><%=course.code%><span>  </span><%=course.name%></p>
+              <span class="card-text">aps : <%=course.school.aps%></span><br>
+              <span class="card-text"><%=course.school.name%></span>
+
+              <button type="button" name="button">save</button>
+            </div></a>
+          <%}%>
+
+
+
+        <br>
+      <%});%>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Rest</title>
+   <style media="screen">
+     body{
+       background-color: #F6F5F5;
+       text-align: center;
+     }
+     .nwu-div{
+
+       border-radius: 12px;
+
+       border: 3px solid;
+       width: 200px;
+       border-color: #839B97;
+      margin: 16px;
+       padding-top: 0px;
+       float: left;
+
+
+
+
+     }
+     .font-text{
+       color: #4B5D67;
+     }
+     .btn-nwu{
+       margin: 10px;
+       border-radius: 20px;
+       background-color: transparent;
+       border: 1px solid;
+     }
+     .btn-nwu:hover{
+       background-color: #6F2DA8;
+     }
+     .btn-ul{
+       margin: 10px;
+       border-radius: 20px;
+       background-color: transparent;
+       border: 1px solid;
+     }
+     .btn-ul:hover{
+       background-color: #28ABB4;
+     }
+     .btn-wits{
+       margin: 10px;
+       border-radius: 20px;
+       background-color: transparent;
+       border: 1px solid;
+     }
+     .btn-wits:hover{
+       background-color: #14274E;
+     }
+     .btn-uj{
+       margin: 10px;
+       border-radius: 20px;
+       background-color: transparent;
+       border: 1px solid;
+     }
+     .btn-uj:hover{
+       background-color: #6F2DA8;
+     }
+     .btn-up{
+       margin: 10px;
+       border-radius: 20px;
+       background-color: transparent;
+       border: 1px solid;
+     }
+     .btn-up:hover{
+       background-color: #6F2DA8;
+     }
+     .btn-text{
+
+       color: #4B5D67;
+     }
+     .btn-text:hover{
+       color: white;
+       text-decoration: none;
+     }
+     .up-div{
+       background: linear-gradient(to top right,transparent 50%,#608A32 0) top right/40px 40px no-repeat,white;
+       color: #4B5D67;
+       border-radius: 12px;
+
+
+
+     }
+
+     #room-container{
+      margin-left: 300px;
+
+     }
+     .head{
+       width: 100%;
+       background-color: #6F2DA8;
+       margin: 0px;
+       color: white;
+       border-radius: 10px 10px 0px 0px;
+     }
+     .ul-head{
+       width: 100%;
+       background-color: #28ABB4;
+       margin: 0px;
+       color: white;
+       border-radius: 10px 10px 0px 0px;
+
+     }
+     .wits-head{
+       width: 100%;
+       background-color: #14274E;
+       margin: 0px;
+       color: white;
+       border-radius: 10px 10px 0px 0px;
+     }
+     .uj-head{
+       width: 100%;
+       background-color: #DB6400;
+       margin: 0px;
+       color: white;
+       border-radius: 10px 10px 0px 0px;
+     }
+     .body{
+
+       margin-top: 0px;
+     }
+    @media (max-width:900px){
+      #room-container{
+        margin-left: 50px;
+      }
+    }
+   </style>
+
+
+     <!-- <script defer src="http://localhost:5000/socket.io/socket.io.js"></script> -->
+     <!-- <script defer src="/socket.io/socket.io.js"></script> -->
+     <script defer src="https://Poweful-lake-61046.herokuapp.com:5000/socket.io/socket.io.js"></script>
+
+
+     <script defer src="script.js">
+
+     </script>
+  </head>
+  <body>
+
+       <div id="room-container">
+         <%  Course.forEach(function(course){%>
+              <%  if(course.school.name=="NWU"){%>
+               <a class="font-text" href="http://studies.nwu.ac.za/undergraduate-studies/fields-study">
+                 <div class="nwu-div">
+                   <div class="head">
+
+                     <p class="card-title"><%=course.code%><span>  </span><%=course.name%></p>
+                     <hr>
+                   </div>
+
+                    <div class="body">
+                      <h5 class="card-text">aps : <%=course.school.aps%></h5>
+
+                      <h5 class="card-text" name=""><%=course.school.name%></h5>
+                      <button class="btn-nwu" type="button" name="button">  <a class="btn-text"href="/<%= course.name %>">save</a></button>
+                    </div>
+
+                 </div></a>
+               <%}%>
+               <%if(course.school.name=="UP"){%>
+                 <a class="font-text" href="https://www.up.ac.za/">
+                   <div class="nwu-div">
+                     <div class="head">
+
+                       <p class="card-title"><%=course.code%><span>  </span><%=course.name%></p>
+                       <hr>
+                     </div>
+
+                      <div class="body">
+                        <h5 class="card-text">aps : <%=course.school.aps%></h5>
+
+                        <h5 class="card-text" name=""><%=course.school.name%></h5>
+                        <button class="btn-up" type="button" name="button">  <a class="btn-text"href="/<%= course.name %>">save</a></button>
+                      </div>
+
+                   </div></a>
+               <%}%>
+               <!-- wits -->
+               <%if(course.school.name=="Wits"){%>
+                 <a class="font-text" href="https://www.wits.ac.za/">
+                   <div class="nwu-div">
+                     <div class="wits-head">
+
+                       <p class="card-title"><%=course.code%><span>  </span><%=course.name%></p>
+                       <hr>
+                     </div>
+
+                      <div class="body">
+                        <h5 class="card-text">aps : <%=course.school.aps%></h5>
+
+                        <h5 class="card-text" name=""><%=course.school.name%></h5>
+                        <button class="btn-wits" type="button" name="button">  <a class="btn-text"href="/<%= course.name %>">Join Group</a></button>
+                      </div>
+
+                   </div></a>
+               <%}%>
+
+             <!-- UJ -->
+             <%if(course.school.name=="UL"){%>
+               <a class="font-text" href="https://www.ul.ac.za/">
+                 <div class="nwu-div">
+                   <div class="ul-head">
+
+                     <p class="card-title"><%=course.code%><span>  </span><%=course.name%></p>
+                     <hr>
+                   </div>
+
+                    <div class="body">
+                      <h5 class="card-text">aps : <%=course.school.aps%></h5>
+
+                      <h5 class="card-text" name=""><%=course.school.name%></h5>
+                      <button class="btn-ul" type="button" name="button">  <a class="btn-text"href="/<%= course.name %>">save</a></button>
+                    </div>
+
+                 </div></a>
+             <%}%>
+
+             <br>
+           <%});%>
+       </div>
+
+
+
+  </body>
+</html>

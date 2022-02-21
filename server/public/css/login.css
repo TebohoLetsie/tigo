@@ -1,0 +1,54 @@
+body{
+  background-color: #F6F5F5;
+  text-align: center;
+}
+.login-Container{
+  /* margin-top: 15vw; */
+
+  width: 350px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: white;
+  font: "Ariel";
+  text-align: center;
+  border-style: ridge;
+
+}
+.register-Container{
+
+
+  width: 350px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: white;
+  font: "Ariel";
+  text-align: center;
+  border-style: ridge;
+}
+.heading{
+  color: grey;
+}
+.inputs{
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+.logo{
+  color: #3D7EA6;
+}
+hr{
+  background-color: #3D7EA6;
+}
+ .button{
+
+   color: white;
+   margin-bottom: 15px;
+   padding :10px;
+   width: 200px;
+   border-radius: 20px;
+   background-color: #3D7EA6;
+   border-color: white;
+ }
+ .button:hover{
+      font-weight: bolder;
+ }

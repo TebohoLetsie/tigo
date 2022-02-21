@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <!-- <link rel="stylesheet" href="css/styles.css"> -->
+         <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>Aps calculator</title>
+
+    <style>
+     body{
+      background-color:#F6F5F5;
+    }
+    #header-div{
+      width: 100%;
+      height: 200px;
+      background-color: #3D7EA6;
+      text-align: center;
+
+      margin: 0px;
+
+    }
+    #Apsheading{
+
+      color: #EEEEEE;
+
+      font-size: 40px;
+    }
+    #calculator{
+    background-color: #F6F5F5;
+     width: 250px;
+    margin: 0 auto;
+    margin-top: -50px;
+    border-radius: 10px;
+    border: 5px solid #D2D3C9;
+    text-align: center;
+    font-family: "lucida console";
+    color: #204051;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    }
+    .form-items{
+      width: 150px;
+      margin: 5px;
+      display: inline-block;
+      color: #204051;
+      font-size: 16px;
+       height: auto;
+       text-align: center;
+    }
+    .percentage{
+      width: 40px;
+      padding: 5px;
+      text-align: center;
+      display: inline-block;
+      height: 30px;
+
+
+    }
+    .box-text{
+      color: blue;
+      text-align: center;
+    }
+    .symbol{
+      padding: 5px;
+    }
+    .btn-submit{
+
+     transition-duration: 0.4s;
+      color:  #30475E;
+      border: 2px solid #3D7EA6;
+    }
+    .btn-submit:hover{
+    background-color: #3D7EA6;
+      color: white;
+    }
+    .name{
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+
+    }
+    .initial{
+      background-color: #3D7EA6;
+      border-radius: 50%;
+      width: 40px;
+      height:40px;
+      text-align: center;
+      float: left;
+
+    }
+    .ml-auto{
+      margin-left: auto !important;
+    }
+
+
+    .footer{
+      width: 100%;
+      height: 80px;
+      background-color: #3D7EA6;
+      text-align: center;
+
+
+      text-align: center;
+      color: white;
+      bottom: 0;
+
+    }
+
+    </style>
+  </head>
+
+  <body>
+
+    <div id="header-div">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Teego</a>
+
+
+       <ul class="initial navbar-nav ml-auto">
+         <li class="list-unstyled  nav-item active dropleft">
+           <p class="name" id="navbarDropdown"  data-toggle="dropdown"  aria-expanded="false">
+             <%= initial %>
+           </p>
+           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <a class="dropdown-item" href="/profile">View Profile</a>
+             <a class="dropdown-item" href="/compose">Write Post</a>
+              <a class="dropdown-item" href="/home">View Posts</a>
+             <a class="dropdown-item" href="/calculator">Aps Calculator</a>
+
+             <div class="dropdown-divider"></div>
+             <a class="dropdown-item" href="#">Log Out</a>
+           </div>
+         </li>
+
+
+
+
+
+
+    </nav>
+
+        <h1 id="Apsheading">Aps Calculator</h1>
+
+
+</div>
+<div id="calculator">
+
+    <form class="" action="/aps" method="post">
+      <!-- Home Language -->
+      <div class="form-group">
+        <select class="form-control form-items language" name="HL">
+          <option value="">HL</option>
+          <option class = "box-text" value="Afrikaans_FAL">Afrikaans </option>
+          <option value="English">English </option>
+          <option value="Isindebele_FAL">IsiNdebele </option>
+          <option value="IsiXhosa_FAL">IsiXhosa </option>
+          <option value="option1">IsiZulu </option>
+          <option value="option1">Setswana </option>
+          <option value="option1">Tshivenda </option>
+          <option value="option1">Xitsonga </option>
+          <option value="option1">Northern Sotho </option>
+          <option value="option1">Southern Sotho </option>
+
+
+
+       </select>
+       <input  class="form-control percentage" maxlength="3" type="text" name="mark1" autocomplete="off"><span class="symbol">%</span>
+       <br>
+
+      <!-- First Additional Language -->
+
+       <select class="form-control form-items langua3ge" name="FAL">
+         <option value="">FAL</option>
+         <option value="Afrikaans_">Afrikaans</option>
+         <option value="English">English</option>
+         <option value="Isindebele_">IsiNdebele</option>
+         <option value="IsiXhosa_">IsiXhosa</option>
+         <option value="option1">IsiZulu </option>
+         <option value="option1">Setswana </option>
+         <option value="option1">Tshivenda </option>
+         <option value="option1">Xitsonga </option>
+         <option value="option1">Northern Sotho </option>
+         <option value="option1">Southern Sotho </option>
+      </select>
+        <input type="text" name="mark2" maxlength="3" class="form-control percentage" autocomplete="off"><span class="symbol">%</span>
+
+      <br><!-- Mathematics -->
+      <select class="form-control form-items" name="Maths">
+          <option value="">Subject 1</option>
+        <option value="maths" name="maths">Mathematics</option>
+        <option value="mathsL" name ="math_Lit">Mathematical Literacy</option>
+        <option value="mathsTech" name ="math_Tech">Technical Mathematics</option>
+
+      </select>
+       <input type="text" name="mark3" maxlength="3" class="form-control percentage" autocomplete="off"><span class="symbol">%</span>
+    <br>
+      <!-- Other subject 1 -->
+      <select class="form-control form-items" name="other1">
+          <option value="">Subject 2</option>
+        <option value="Accounting">Accounting</option>
+        <option value="ABRSM_Practical_Music_Grade_7">ABRSM Practical Music Grade 7</option>
+        <option value="Afrikaans_SAL">Afrikaans SAL</option>
+        <option value="Agricultural_Management_Practices">Agricultural Management Practices</option>
+        <option value="Agricultural_Sciences">Agricultural Sciences</option>
+        <option value="Agricultural_Technology">Agricultural Technology</option>
+        <option value="Arabic_SAL">Arabic SAL</option>
+        <option value="Business_Studies">Business Studies</option>
+        <option value="Chiness_A-Level">Chiness A-Level</option>
+        <option value="option1">Civil Technology</option>
+        <option value="CAT">CAT</option>
+        <option value="Consumer_Studies">Consumer Studies</option>
+        <option value="option1">Dance Studies</option>
+        <option value="option1">Design</option>
+        <option value="option1">Dramtic Arts</option>
+        <option value="economics">Economics</option>
+        <option value="egd">EGD</option>
+         <option value="English_SAL">English SAL</option>
+         <option value="option1">Equine studies</option>
+         <option value="option1">French SAL</option>
+         <option value="option1">Geography</option>
+         <option value="option1">German HL</option>
+         <option value="option1">German SAL</option>
+         <option value="option1">Gujarati SAL</option>
+          <option value="option1">Hebrew SAL</option>
+          <option value="">Hindi FAL</option>
+          <option value="">Hindi SAL</option>
+          <option value="">History</option>
+          <option value="">Hospitality Studies</option>
+          <option value="">Information Technology</option>
+          <option value="">IsiXhosa SAL</option>
+          <option value="">IsiNdebele SAL</option>
+          <option value="">IsiZulu SAL</option>
+          <option value="">Italian SAL</option>
+          <option value="">Latin SAL</option>
+          <option value="">Life Sciences</option>
+          <option value="">Maritime Economics</option>
+          <option value="">Machanical Technology</option>
+          <option value="">Morden Greek SAL</option>
+          <option value="">Music</option>
+          <option value="">Nautical Science</option>
+          <option value="">Physical Science</option>
+          <option value="">Portuguese SAL</option>
+          <option value="">Religion Studies</option>
+          <option value="">Sepedi SAL</option>
+          <option value="">Sesotho SAL</option>
+          <option value="">Setswana SAL</option>
+          <option value="">Spanish SAL</option>
+          <option value="">Sport and Exercise Science</option>
+          <option value="">Tamil FAL</option>
+          <option value="">Tamil SAL</option>
+          <option value="">TCL Practical Music Grade 7<option>
+          <option value="">Telegu SAL</option>
+          <option value="">Tourism</option>
+          <option value="">UNISA Practical Music Grade 7</option>
+          <option value="">Urdu FAL</option>
+          <option value="">Urdu SAL</option>
+          <option value="">Visual Arts</option>
+          <option value="">Xitsonga SAL</option>
+      </select>
+
+          <input type="text" name="mark4" maxlength="3" class="form-control percentage" autocomplete="off"><span class="symbol">%</span>
+
+       <br>
+      <!-- Other subject 2 -->
+      <select class="form-control form-items" name="other2">
+          <option value="">Subject 3</option>
+          <option value="Business_Studies">Business Studies</option>
+        <option value="ABRSM_Practical_Music_Grade_7">ABRSM Practical Music Grade 7</option>
+        <option value="Accounting">Accounting</option>
+        <option value="Afrikaans_SAL">Afrikaans SAL</option>
+        <option value="Agricultural_Management_Practices">Agricultural Management Practices</option>
+        <option value="Agricultural_Sciences">Agricultural Sciences</option>
+        <option value="Agricultural_Technology">Agricultural Technology</option>
+        <option value="Arabic_SAL">Arabic SAL</option>
+
+        <option value="Chiness_A-Level">Chiness A-Level</option>
+        <option value="option1">Civil Technology</option>
+        <option value="CAT">CAT</option>
+        <option value="Consumer_Studies">Consumer Studies</option>
+        <option value="option1">Dance Studies</option>
+        <option value="option1">Design</option>
+        <option value="option1">Dramtic Arts</option>
+        <option value="economics">Economics</option>
+        <option value="egd">EGD</option>
+         <option value="English_SAL">English SAL</option>
+         <option value="option1">Equine studies</option>
+         <option value="option1">French SAL</option>
+         <option value="option1">Geography</option>
+         <option value="option1">German HL</option>
+         <option value="option1">German SAL</option>
+         <option value="option1">Gujarati SAL</option>
+          <option value="option1">Hebrew SAL</option>
+          <option value="">Hindi FAL</option>
+          <option value="">Hindi SAL</option>
+          <option value="">History</option>
+          <option value="">Hospitality Studies</option>
+          <option value="">Information Technology</option>
+          <option value="">IsiXhosa SAL</option>
+          <option value="">IsiNdebele SAL</option>
+          <option value="">IsiZulu SAL</option>
+          <option value="">Italian SAL</option>
+          <option value="">Latin SAL</option>
+          <option value="">Life Sciences</option>
+          <option value="">Maritime Economics</option>
+          <option value="">Machanical Technology</option>
+          <option value="">Morden Greek SAL</option>
+          <option value="">Music</option>
+          <option value="">Nautical Science</option>
+          <option value="">Physical Science</option>
+          <option value="">Portuguese SAL</option>
+          <option value="">Religion Studies</option>
+          <option value="">Sepedi SAL</option>
+          <option value="">Sesotho SAL</option>
+          <option value="">Setswana SAL</option>
+          <option value="">Spanish SAL</option>
+          <option value="">Sport and Exercise Science</option>
+          <option value="">Tamil FAL</option>
+          <option value="">Tamil SAL</option>
+          <option value="">TCL Practical Music Grade 7<option>
+          <option value="">Telegu SAL</option>
+          <option value="">Tourism</option>
+          <option value="">UNISA Practical Music Grade 7</option>
+          <option value="">Urdu FAL</option>
+          <option value="">Urdu SAL</option>
+          <option value="">Visual Arts</option>
+          <option value="">Xitsonga SAL</option>
+      </select>
+        <input type="text" name="mark5" maxlength="3" class="form-control percentage" autocomplete="off"><span class="symbol">%</span>
+       <br>
+      <!-- Other subject 3 -->
+      <select class="form-control form-items" name="other3">
+          <option value="">Subject 4</option>
+        <option value="CAT">CAT</option>
+        <option value="ABRSM_Practical_Music_Grade_7">ABRSM Practical Music Grade 7</option>
+        <option value="Accounting">Accounting</option>
+        <option value="Afrikaans_SAL">Afrikaans SAL</option>
+        <option value="Agricultural_Management_Practices">Agricultural Management Practices</option>
+        <option value="Agricultural_Sciences">Agricultural Sciences</option>
+        <option value="Agricultural_Technology">Agricultural Technology</option>
+        <option value="Arabic_SAL">Arabic SAL</option>
+        <option value="Business_Studies">Business Studies</option>
+        <option value="Chiness_A-Level">Chiness A-Level</option>
+        <option value="option1">Civil Technology</option>
+
+        <option value="Consumer_Studies">Consumer Studies</option>
+        <option value="option1">Dance Studies</option>
+        <option value="option1">Design</option>
+        <option value="option1">Dramtic Arts</option>
+        <option value="economics">Economics</option>
+        <option value="egd">EGD</option>
+         <option value="English_SAL">English SAL</option>
+         <option value="option1">Equine studies</option>
+         <option value="option1">French SAL</option>
+         <option value="option1">Geography</option>
+         <option value="option1">German HL</option>
+         <option value="option1">German SAL</option>
+         <option value="option1">Gujarati SAL</option>
+          <option value="option1">Hebrew SAL</option>
+          <option value="">Hindi FAL</option>
+          <option value="">Hindi SAL</option>
+          <option value="">History</option>
+          <option value="">Hospitality Studies</option>
+          <option value="">Information Technology</option>
+          <option value="">IsiXhosa SAL</option>
+          <option value="">IsiNdebele SAL</option>
+          <option value="">IsiZulu SAL</option>
+          <option value="">Italian SAL</option>
+          <option value="">Latin SAL</option>
+          <option value="">Life Sciences</option>
+          <option value="">Maritime Economics</option>
+          <option value="">Machanical Technology</option>
+          <option value="">Morden Greek SAL</option>
+          <option value="">Music</option>
+          <option value="">Nautical Science</option>
+          <option value="">Physical Science</option>
+          <option value="">Portuguese SAL</option>
+          <option value="">Religion Studies</option>
+          <option value="">Sepedi SAL</option>
+          <option value="">Sesotho SAL</option>
+          <option value="">Setswana SAL</option>
+          <option value="">Spanish SAL</option>
+          <option value="">Sport and Exercise Science</option>
+          <option value="">Tamil FAL</option>
+          <option value="">Tamil SAL</option>
+          <option value="">TCL Practical Music Grade 7<option>
+          <option value="">Telegu SAL</option>
+          <option value="">Tourism</option>
+          <option value="">UNISA Practical Music Grade 7</option>
+          <option value="">Urdu FAL</option>
+          <option value="">Urdu SAL</option>
+          <option value="">Visual Arts</option>
+          <option value="">Xitsonga SAL</option>
+      </select>
+        <input type="text" name="mark6" maxlength="3" class="form-control percentage" autocomplete="off"><span class="symbol">%</span>
+        <br>
+        <select class="form-control form-items" name="other4">
+          <option value="">Subject 5</option>
+          <option value="LO">Life Orientation</option>
+
+        </select>
+          <input type="text" name="mark7" maxlength="3"  class="form-control percentage" autocomplete="off"><span class="symbol">%</span>
+        <br>
+       <button class="btn btn-submit" type="submit" name="button">Submit</button>
+      </div>
+
+    </form>
+
+
+</div>
+
+<!-- <div class="footer">
+  <p>Email me @: Letsieteboho7@gmail.com</p>
+</div> -->
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" type="image/png" href="./img/tigo.png" />
+      <meta name="theme-color" content="#000000" />
+      <meta name="description" content="school application" />
+      <link rel="apple-touch-icon" href="./img/tigo.png" />
+      <link rel="manifest" href="./manifest.json" />
+
+    <title>School App</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=McLaren|Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script src="../src/index.js" type="text/jsx"></script>
+    <noscript>
+      This app requires javascript
+    </noscript>
+    <script>
+      if('serviceWorker' in navigator){
+        window.addEventListener('load',()=>{
+          navigator.serviceWorker.register('./serviceworker.js')
+          .then((reg)=>console.log("success: ", reg.scope))
+          .catch((err)=>console.log("failure",err))
+        })
+      }  
+    </script>
+  </body>
+</html>
